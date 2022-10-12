@@ -16,7 +16,29 @@ public class Dragger : MonoBehaviour
     }
     public void OnMouseUp()
     {
+        float roundx = 0f;
+        float roundy = 0f;
         isDragging = false;
+        if(currentDrag.name.Equals("Player")|| currentDrag.name.Equals("HorizontalCar")){
+            roundx = MathF.Round(currentDrag.transform.position.x);
+            roundy = currentDrag.transform.position.y;
+        }
+        if(currentDrag.name.Equals("HorizontalTruck1")|| currentDrag.name.Equals("HorizontalTruck2"))
+        {
+            roundx = Mathf.Round(currentDrag.transform.position.x) - .5f;
+            roundy = currentDrag.transform.position.y;
+        }
+        if(currentDrag.name.Equals("VerticalCar1")|| currentDrag.name.Equals("VerticalCar2"))
+        {
+            roundx = currentDrag.transform.position.x;
+            roundy = Mathf.Round(currentDrag.transform.position.y);
+        }
+        if (currentDrag.name.Equals("VerticalTruck"))
+        {
+            roundx = currentDrag.transform.position.x;
+            roundy = Mathf.Round(currentDrag.transform.position.y) - .5f;
+        }
+        transform.position = new Vector3(roundx, roundy);
     }
     void Update()
     {
