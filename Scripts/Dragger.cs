@@ -34,7 +34,7 @@ public class Dragger : MonoBehaviour
         }
         if(currentDrag.name.Equals("HorizontalTruck1")|| currentDrag.name.Equals("HorizontalTruck2"))
         {
-            roundx = Mathf.Round(currentDrag.transform.position.x) - .5f;
+            roundx = Mathf.Round(currentDrag.transform.position.x-.5f) + .5f;
             roundy = currentDrag.transform.position.y;
             if(roundx>1.5){
                 roundx = 1.5f;
@@ -57,7 +57,7 @@ public class Dragger : MonoBehaviour
         if (currentDrag.name.Equals("VerticalTruck"))
         {
             roundx = currentDrag.transform.position.x;
-            roundy = Mathf.Round(currentDrag.transform.position.y) - .5f;
+            roundy = Mathf.Round(currentDrag.transform.position.y-.5f) + .5f;
             if(roundy>1.5){
                 roundy = 1.5f;
             }
